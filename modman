@@ -1,0 +1,4 @@
+src/app/code/community/Trendmarke/ValidateMail/                       app/code/community/Trendmarke/ValidateMail/
+src/app/etc/modules/Trendmarke_ValidateMail.xml                       app/etc/modules/Trendmarke_ValidateMail.xml
+src/app/design/adminhtml/default/default/layout/validatemail.xml     app/design/adminhtml/default/default/layout/validatemail.xml
+src/app/design/adminhtml/default/default/template/validatemail/      app/design/adminhtml/default/default/template/validatemail/

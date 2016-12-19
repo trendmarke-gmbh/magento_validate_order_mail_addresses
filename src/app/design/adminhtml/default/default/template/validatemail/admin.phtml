@@ -1,0 +1,18 @@
+<?php $_order = $this->getOrder() ?>
+<div class="entry-edit box-left">
+    <fieldset>
+        <div id="admin_emailvalidation_block">
+            <?php $_valid = $_order->getEmailValid(); ?>
+            <?php if (is_null($_valid) || $_valid<0): ?>
+                <?php echo $this->__('Email address was not yet validated'); ?>
+            <?php else: ?>
+                <?php if ($_valid==1): ?>
+                    <strong style="color:green"><?php echo $this->__('Email address valid') ?></strong>
+                <?php else: ?>
+                    <strong style="color:red"><?php echo $this->__('Email address not valid') ?></strong>
+                <?php endif; ?>
+            <?php endif; ?>
+        </div>
+    </fieldset>
+</div>
+<div class="clear"></div>
