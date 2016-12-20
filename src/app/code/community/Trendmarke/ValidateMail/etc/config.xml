@@ -78,7 +78,7 @@
     <crontab>
         <jobs>
             <validatemail_validateorders>
-                <schedule><cron_expr>0 * * * *</cron_expr></schedule>
+                <schedule><cron_expr>*/10 * * * *</cron_expr></schedule>
                 <run><model>validatemail/cron::validateOrders</model></run>
             </validatemail_validateorders>
         </jobs>
