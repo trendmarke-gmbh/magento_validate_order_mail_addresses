@@ -244,13 +244,14 @@
       $response = $this->request_yahoo_ajax($cookies, $fields);
       
       $this->debug[] = 'Parsing the response...';
-      $response_errors = json_decode($response, true)['errors'];
-
-      $this->debug[] = 'Searching errors for exisiting username error...';
-      foreach($response_errors as $err){
-        if($err['name'] == 'yid' && $err['error'] == 'IDENTIFIER_EXISTS'){
-          $this->debug[] = 'Found an error about exisiting email.';
-          return true;
+      if (is_array($_decoded_response) && isset($_decoded_response['errors'])) {
+        $response_errors = $_decoded_response['errors'];
+        $this->debug[] = 'Searching errors for exisiting username error...';
+        foreach($response_errors as $err){
+          if($err['name'] == 'yid' && $err['error'] == 'IDENTIFIER_EXISTS'){
+            $this->debug[] = 'Found an error about exisiting email.';
+              return true;
+            }
         }
       }
       return false;
