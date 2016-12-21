@@ -6,7 +6,7 @@ class Trendmarke_ValidateMail_Model_Cron{
      * Note: only last 24 hours are considered to prevent flooding with historic orders
      */
     public function validateOrders(){
-        if (Mage::getStoreConfig('sales/general/auto_email_validation')) {
+        if (Mage::getStoreConfig('sales/general/auto_email_validation', Mage_Core_Model_Store::ADMIN_CODE)) {
             $_orders = $orders = Mage::getModel('sales/order')->getCollection()
                 ->addFieldToFilter('created_at', array(
                     'from'     => strtotime('-1 day', time()),
